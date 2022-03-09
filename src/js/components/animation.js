@@ -13,9 +13,11 @@ export const animTextHero = () => {
   timeLineTextHero.fromTo('.hero__timer', {y: 100, opacity: 0}, {y: 0, opacity: 1},'<50%');
 }
 export const animRunLine = () => {
-  const timeLineRunLine = gsap.timeline({ defaults: { duration: 40,  ease: "none" } });
-  const timeLineRunLineNew = gsap.timeline({ defaults: { duration: 40,  ease: "none", repeat: -1 } }).pause();
-  timeLineRunLine.fromTo('.runline__text',{x:"0"}, {x:"230%", onComplete: ()=> timeLineRunLineNew.play()});
+  const timeLineRunLine = gsap.timeline({ defaults: { duration: 50,  ease: "none" } });
+    timeLineRunLine.fromTo('.runline',{y: "100%", opacity: 0}, {y: 0, opacity: 1, delay: 1.5, duration:.5});
 
-  timeLineRunLineNew.fromTo('.runline__text',{x:"-230%"}, {x:"230%"});
+  const timeLineRunLineNew = gsap.timeline({ defaults: { duration: 45,  ease: "none", repeat: -1 } });
+  // timeLineRunLine.fromTo('.runline__text',{x:"0"}, {x:"250%", onComplete: ()=> timeLineRunLineNew.play()});
+
+  timeLineRunLineNew.fromTo('.runline__text',{x:"-250%"}, {x:"230%"});
 }
