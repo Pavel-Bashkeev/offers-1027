@@ -19,6 +19,14 @@ body {
 	font: 400 20px / 24px var(--font);
 	margin: 0;
 	padding: 0;
+	&.disable-scroll {
+		position: relative;
+		overflow: hidden;
+		height: 100vh;
+		left: 0;
+		top: 0;
+		width: 100%;
+	}
 }
 
 .main{
@@ -81,6 +89,23 @@ body {
 
 .section-offset{
 	padding: 64px 0;
+}
+.btn{
+	color: var(--light);
+	font:400 25px/30px var(--font);
+	background-color: var(--accent);
+	padding: 24px 40px;
+	text-align: center;
+	max-width: 320px;
+	width: 100%;
+	text-transform: uppercase;
+	display: block;
+	margin: 0 auto;
+	border-radius: 40px;
+	transition: all .3s ease-in-out;
+	&:hover{
+		background-color: #dd3448;
+	}
 }
 @media (max-width:390px) {
 	.container{

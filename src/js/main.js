@@ -6,6 +6,7 @@ import {reviewsSlider, sliderHeatedJacket, sliderHeatedVest, sliderHeatedVestCam
 import { animLogo, animRunLine, animTextHero } from './components/animation.js';
 import { timer } from './components/timer.js';
 import { runLine } from './components/runLine.js';
+import { modalWindow } from './components/modalWindow.js';
 documentReady(()=>{
   linkSmooth();
   runLine();
@@ -19,5 +20,6 @@ documentReady(()=>{
   sliderHeatedVestCamouflage();
   sliderPants();
   reviewsSlider();
+  modalWindow();
 })
 

@@ -40,6 +40,7 @@ function sliderTemplate(selector) {
     slidePreView: 1,
     allowTouchMove: false,
     effect: 'fade',
+    setWrapperSize: true,
     fadeEffect: {
       crossFade: true
     },
@@ -54,6 +55,8 @@ function sliderTemplate(selector) {
 export const reviewsSlider = () => {
   const reviewSlider = new Swiper('.reviews__slider .swiper', {
     loop: true,
+    centerMode: true,
+    speed: 2500,
     pagination: {
       el: '.swiper-pagination',
       type: 'bullets',
