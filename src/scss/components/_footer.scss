@@ -1,5 +1,5 @@
 .footer{
-  background-color: #861202;
+  background-color: #ffffff;
   padding: 20px 0;
   color: var(--black);
   font-size: 14px;
@@ -8,7 +8,7 @@
 }
 .footer-text{
   margin:0 0 5px;
-  color: var(--light);
+  color: var(--black);
 }
 .footer-link {
   opacity: 0.8;
@@ -16,5 +16,5 @@
   font-size: 14px;
   line-height: 18px;
   font-family: inherit;
-  color: var(--light);
+  color: var(--black);
 }

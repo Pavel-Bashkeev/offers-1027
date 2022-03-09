@@ -1,0 +1,40 @@
+.order{
+  @extend .section-bg;
+  &__title{
+    @extend .title;
+    color: var(--light);
+    margin: 0 0 35px;
+  }
+  &__items{
+    display: flex;
+    justify-content: center;
+    gap: 45px 40px;
+    flex-wrap: wrap;
+  }
+}
+.order-item{
+  max-width: 194px;
+  &__box{
+    overflow: hidden;
+    border-radius: 20px;
+    margin-bottom: 23px;
+  }
+  &__img{
+    display: block;
+    object-fit: cover;
+  }
+  &__content{
+    color: var(--light);
+    text-align: center;
+  }
+  &__title{
+    font: 500 20px/24px var(--font);
+    margin: 0 0 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.9px;
+  }
+  &__text{
+    font: 400 20px/24px var(--font);
+    margin: 0;
+  }
+}

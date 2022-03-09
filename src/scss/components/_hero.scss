@@ -1,19 +1,5 @@
 .hero {
-  position: relative;
-  z-index: 1;
-  background-image: url('@img/bg.jpg');
-  @extend %bg-cover;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(121, 15, 0, 0.8);
-    z-index: -1;
-  }
+ @extend .section-bg;
 
   &__container {
     display: grid;

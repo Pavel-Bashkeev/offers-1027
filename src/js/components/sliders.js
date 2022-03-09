@@ -17,11 +17,12 @@ export const sliderPants = () => {
 function changeFistSlide() {
   const cardsBox = document.querySelectorAll('.card');
   cardsBox.forEach(item => {
-    let sliderName = item.dataset.sliderName;
+    
+    item.addEventListener('mouseenter', () => {
+      let sliderName = item.dataset.sliderName;
     const sliderBox = document.querySelector(`[data-slider-name=${sliderName}]`);
     const slideAvtive = sliderBox.querySelector('.swiper-slide-active');
     const slideAvtiveNext = sliderBox.querySelector('.swiper-slide-next');
-    item.addEventListener('mouseenter', () => {
       slideAvtive.style.opacity = '0';
       slideAvtiveNext.style.opacity = '1';
 
@@ -48,4 +49,34 @@ function sliderTemplate(selector) {
       }
     }
   });
+}
+
+export const reviewsSlider = () => {
+  const reviewSlider = new Swiper('.reviews__slider .swiper', {
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true,
+    },
+    autoplay:true,
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        autoHeight: true,
+      },
+      640: {
+        slidesPerView: 1.5,
+        centeredSlides: true,
+        spaceBetween: 30,
+        autoHeight: false,
+      },
+      1100: {
+        slidesPerView: 3,
+        spaceBetween: 25,
+      }
+    }
+  })
 }
