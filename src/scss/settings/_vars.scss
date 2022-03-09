@@ -1,0 +1,27 @@
+
+
+%bg-cover{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+%bg-contain{
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+%bg-100{
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+}
+:root{
+	--font: 'Roboto';
+  --font-logo: 'Sansation Light';
+
+  // color
+  --light: #ffffff;
+  --accent: #FF3E55;
+  --black: #000000;
+
+}

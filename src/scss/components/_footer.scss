@@ -1,0 +1,20 @@
+.footer{
+  background-color: #861202;
+  padding: 20px 0;
+  color: var(--black);
+  font-size: 14px;
+  line-height: 18px;
+ font-family: inherit;
+}
+.footer-text{
+  margin:0 0 5px;
+  color: var(--light);
+}
+.footer-link {
+  opacity: 0.8;
+  text-decoration: underline;
+  font-size: 14px;
+  line-height: 18px;
+  font-family: inherit;
+  color: var(--light);
+}

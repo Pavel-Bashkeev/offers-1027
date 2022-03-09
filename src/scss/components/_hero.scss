@@ -1,0 +1,120 @@
+.hero {
+  position: relative;
+  z-index: 1;
+  background-image: url('@img/bg.jpg');
+  @extend %bg-cover;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(121, 15, 0, 0.8);
+    z-index: -1;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: 670px 1fr;
+    
+    grid-template-areas:
+      'preview title'
+      'preview subtitle'
+      'preview deleviry'
+      'preview timer'
+      'preview .'
+    ;
+  }
+
+  &__title {
+    grid-area: title;
+    font: 500 40px/46px var(--font);
+    color: var(--light);
+    margin: 38px 0 15px -68px;
+    max-width: 579px;
+    opacity: 0;
+  }
+
+  &__box {
+    grid-area: preview;
+    margin-left: -80px;
+  }
+  &__preview{
+    clip-path: polygon(0 0, 83% 0, 100% 100%, 17% 100%);
+    opacity: 0;
+  }
+
+  &__image {
+    display: block;
+    object-fit: cover;
+  }
+
+  &__subtitle {
+    grid-area: subtitle;
+    font: 400 30px/36px var(--font);
+    color: var(--light);
+    margin: 0 0 21px -69px;
+    opacity: 0;
+  }
+
+  &__delivery {
+    grid-area: deleviry;
+    display: flex;
+    align-items: center;
+    gap: 0 24px;
+    opacity: 0;
+    margin-bottom: 39px;
+    &-icon{
+      width: 97px;
+      height: 97px;
+      border-radius: 50%;
+      overflow: hidden;
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: -38px;
+    }
+    &-text{
+      font:400 30px/35px var(--font);
+      color: var(--light);
+      text-transform: uppercase;
+      margin:0;
+    }
+  }
+
+  &__timer {
+    grid-area: timer;
+    opacity: 0;
+  }
+}
+.runline{
+  background-color: #2D2727;
+  overflow: hidden;
+  position: absolute;
+  clip-path: polygon(0 0, 100% 0%, 100% 100%, 12px 100%);
+  padding: 25px 0;
+  position: absolute;
+  bottom: 40px;
+  left: calc((100% - 1145px)/2 );
+  right: 0;
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 46px;
+  &__text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 46px;
+    margin: 0;
+  }
+  &__item{
+    display: block;
+    white-space: nowrap;
+    color: var(--light);
+    font: 400 30px/35px var(--light);
+  }
+}

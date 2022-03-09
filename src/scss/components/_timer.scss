@@ -1,0 +1,30 @@
+.timer{
+  max-width: 330px;
+  margin: 0 auto;
+  transform: translateX(-10px);
+  &__title{
+    text-align: center;
+    font: 500 27px/30px var(--font);
+    color: var(--light);
+    margin: 0 auto 21px;
+    max-width: 310px;
+  }
+  &-count{
+    font: 500 55px/66px var(--font);
+    color: var(--light);
+    text-align: center;
+    width: 92px;
+    margin: 0;
+    background-color: var(--accent);
+  }
+  &-delimeter{
+    font: 500 66px/66px var(--font);
+    color: var(--light);
+    margin: 0 2px;
+  }
+  &__text{
+    font: 400 18px/20px var(--font);
+    color: var(--light);
+    text-align: center;
+  }
+}
