@@ -17,7 +17,6 @@ export const sliderPants = () => {
 function changeFistSlide() {
   const cardsBox = document.querySelectorAll('.card');
   cardsBox.forEach(item => {
-
     item.addEventListener('mouseenter', () => {
       let sliderName = item.dataset.sliderName;
       const sliderBox = document.querySelector(`[data-slider-name=${sliderName}]`);
@@ -35,25 +34,25 @@ function changeFistSlide() {
 }
 
 function sliderTemplate(selector) {
-  let slider = new Swiper(selector, {
-    slidePreView: 1,
-    setWrapperSize: true,
-    effect: 'fade',
-    on: {
-      init: () => {
-        if (document.body.clientWidth > 1100) {
+  if (document.body.clientWidth > 1100) {
+    let slider = new Swiper(selector, {
+      slidePreView: 1,
+      setWrapperSize: true,
+      effect: 'fade',
+      on: {
+        init: () => {
           changeFistSlide();
         }
-      }
-    },
-  });  
+      },
+    });
+  }
   if (document.body.clientWidth < 1100) {
-    slider.destroy(false, true);
-    slider = new Swiper(selector, {
-        allowTouchMove: true,
-        autoplay: true,
-        loop: true,
-        spaceBetween: 20,
+    let slider = new Swiper(selector, {
+      effect: 'slide',
+      allowTouchMove: true,
+      autoplay: true,
+      loop: true,
+      spaceBetween: 20,
     });
     slider.update();
   }

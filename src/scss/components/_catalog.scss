@@ -26,12 +26,6 @@
   flex-direction: column;
   &__images {
     border-radius: 25px;
-
-    &:hover {
-      .swiper-slide-active {
-        opacity: 0;
-      }
-    }
   }
 
   &__image {
@@ -98,5 +92,10 @@
   }
   &__tagging{
     display: none;
+  }
+}
+@media (max-width:500px) {
+  .catalog__items{
+    padding: 0;
   }
 }

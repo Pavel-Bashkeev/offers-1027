@@ -1,59 +1,119 @@
-.header{
+.header {
   padding: 26px 0;
   background-color: #fff;
-  &__container{
+
+  &__container {
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
   }
-  &__logo{
+
+  &__logo {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     left: 15px;
-    
+
   }
 }
-.logo{
+
+.logo {
   display: flex;
-    gap: 0 3px;
-  &__text{
-    &-item{
+  gap: 0 3px;
+
+  &__text {
+    &-item {
       font-family: var(--font-logo);
       font-weight: 300;
       color: var(--black);
     }
-    &--big{
+
+    &--big {
       font-size: 29px;
       line-height: 32px;
     }
-    &--small{
+
+    &--small {
       font-size: 15px;
       line-height: 17px;
     }
   }
 }
-.navigation{
-  &__list{
+
+.navigation {
+  background-color: #fff;
+  &__list {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0 20px;
   }
-  &__link{
-    font:400 20px/24px var(--font);
+
+  &__link {
+    font: 400 20px/24px var(--font);
     color: var(--black);
     text-transform: uppercase;
     border: 3px solid transparent;
     border-radius: 30px;
     padding: 5px 10px;
     transition: all .3s ease-in-out;
-    &--active{
+
+    &--active {
       border-color: #b72410;
     }
-    &:hover{
+
+    &:hover {
       border-color: #b72410;
+    }
+  }
+}
+.burger-btn{
+  width: 40px;
+  height: 28px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  &__line{
+    width: 100%;
+    display: block;
+    background-color: #000;
+    height: 2px;
+  }
+}
+@media (max-width: 1000px) {
+  .header {
+    &__logo {
+      position: static;
+      top: 0;
+      transform: translateY(0%);
+      left: 0px;
+    }
+
+    &__container {
+      justify-content: space-between;
+    }
+  }
+}
+@media (max-width: 900px) {
+  .burger-btn{
+    display: flex;
+    z-index: 11;
+  }
+  .navigation{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    transform: translateX(200%);
+    z-index: 10;
+    width: 90%;
+    transition: all .75s ease-in-out;
+    &__list{
+      flex-direction: column;
+      gap: 30px;
+      height: 100%;
     }
   }
 }
