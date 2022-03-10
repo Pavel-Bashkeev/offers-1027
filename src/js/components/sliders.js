@@ -17,12 +17,12 @@ export const sliderPants = () => {
 function changeFistSlide() {
   const cardsBox = document.querySelectorAll('.card');
   cardsBox.forEach(item => {
-    
+
     item.addEventListener('mouseenter', () => {
       let sliderName = item.dataset.sliderName;
-    const sliderBox = document.querySelector(`[data-slider-name=${sliderName}]`);
-    const slideAvtive = sliderBox.querySelector('.swiper-slide-active');
-    const slideAvtiveNext = sliderBox.querySelector('.swiper-slide-next');
+      const sliderBox = document.querySelector(`[data-slider-name=${sliderName}]`);
+      const slideAvtive = sliderBox.querySelector('.swiper-slide-active');
+      const slideAvtiveNext = sliderBox.querySelector('.swiper-slide-next');
       slideAvtive.style.opacity = '0';
       slideAvtiveNext.style.opacity = '1';
 
@@ -32,24 +32,31 @@ function changeFistSlide() {
       });
     })
   })
-
 }
 
 function sliderTemplate(selector) {
-  const slider = new Swiper(selector, {
+  let slider = new Swiper(selector, {
     slidePreView: 1,
-    allowTouchMove: false,
-    effect: 'fade',
     setWrapperSize: true,
-    fadeEffect: {
-      crossFade: true
-    },
+    effect: 'fade',
     on: {
       init: () => {
-        changeFistSlide()
+        if (document.body.clientWidth > 1100) {
+          changeFistSlide();
+        }
       }
-    }
-  });
+    },
+  });  
+  if (document.body.clientWidth < 1100) {
+    slider.destroy(false, true);
+    slider = new Swiper(selector, {
+        allowTouchMove: true,
+        autoplay: true,
+        loop: true,
+        spaceBetween: 20,
+    });
+    slider.update();
+  }
 }
 
 export const reviewsSlider = () => {
@@ -62,7 +69,7 @@ export const reviewsSlider = () => {
       type: 'bullets',
       clickable: true,
     },
-    autoplay:true,
+    autoplay: true,
     breakpoints: {
       // when window width is >= 320px
       320: {
