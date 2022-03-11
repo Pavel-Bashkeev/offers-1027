@@ -13,8 +13,7 @@ export const sliderHeatedVestCamouflage = () => {
 export const sliderPants = () => {
   sliderTemplate('.swiper-pants')
 }
-
-async function changeFistSlide() {
+ function changeFistSlide() {
   const cardsBox = document.querySelectorAll('.card');
   cardsBox.forEach(item => {
     item.addEventListener('mouseenter', () => {
@@ -32,8 +31,7 @@ async function changeFistSlide() {
     })
   })
 }
-
-async function sliderTemplate(selector) {
+ function sliderTemplate(selector) {
   if (document.body.clientWidth > 1100) {
     let slider = new Swiper(selector, {
       slidePreView: 1,
@@ -58,11 +56,12 @@ async function sliderTemplate(selector) {
   }
 }
 
-export const reviewsSlider = async () => {
+export const reviewsSlider = () => {
    const reviewSlider = new Swiper('.reviews__slider .swiper', {
     loop: true,
     centerMode: true,
     speed: 2500,
+    // autoHeight: true,
     pagination: {
       el: '.swiper-pagination',
       type: 'bullets',
@@ -74,7 +73,7 @@ export const reviewsSlider = async () => {
       320: {
         slidesPerView: 1,
         spaceBetween: 20,
-        autoHeight: true,
+       
       },
       640: {
         slidesPerView: 1.5,

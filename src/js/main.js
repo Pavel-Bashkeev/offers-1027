@@ -8,6 +8,7 @@ import { timer } from './components/timer.js';
 import { runLine } from './components/runLine.js';
 import { modalWindow } from './components/modalWindow.js';
 import { menuMobil } from './components/menuMob.js';
+import * as webpSupportFunctions from './modules/webpSupport.js';
 documentReady(()=>{
   linkSmooth();
   runLine();
@@ -23,5 +24,6 @@ documentReady(()=>{
   reviewsSlider();
   modalWindow();
   menuMobil();
+  webpSupportFunctions.isWebp();
 })
 
