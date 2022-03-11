@@ -15,11 +15,11 @@ documentReady(()=>{
   animTextHero();
   animRunLine();
   document.querySelector('.timer') ? timer(): '';
-  sliderHeatedJacket();
-  sliderHeatedVest();
-  sliderSneakers();
-  sliderHeatedVestCamouflage();
-  sliderPants();
+  document.querySelector('.swiper-heated-jacket') ? sliderHeatedJacket() : '';
+  document.querySelector('.swiper-heated-vest') ? sliderHeatedVest() : '';
+  document.querySelector('.swiper-sneakers') ? sliderSneakers() : '';
+  document.querySelector('.swiper-heated-vest-camouflage') ? sliderHeatedVestCamouflage() : '';
+  document.querySelector('.swiper-pants') ? sliderPants() : '';
   reviewsSlider();
   modalWindow();
   menuMobil();

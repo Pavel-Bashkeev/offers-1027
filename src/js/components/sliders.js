@@ -1,4 +1,4 @@
-export const sliderHeatedJacket = () => {
+export const sliderHeatedJacket =  () => {
   sliderTemplate('.swiper-heated-jacket');
 }
 export const sliderHeatedVest = () => {
@@ -14,7 +14,7 @@ export const sliderPants = () => {
   sliderTemplate('.swiper-pants')
 }
 
-function changeFistSlide() {
+async function changeFistSlide() {
   const cardsBox = document.querySelectorAll('.card');
   cardsBox.forEach(item => {
     item.addEventListener('mouseenter', () => {
@@ -33,7 +33,7 @@ function changeFistSlide() {
   })
 }
 
-function sliderTemplate(selector) {
+async function sliderTemplate(selector) {
   if (document.body.clientWidth > 1100) {
     let slider = new Swiper(selector, {
       slidePreView: 1,
@@ -58,8 +58,8 @@ function sliderTemplate(selector) {
   }
 }
 
-export const reviewsSlider = () => {
-  const reviewSlider = new Swiper('.reviews__slider .swiper', {
+export const reviewsSlider = async () => {
+   const reviewSlider = new Swiper('.reviews__slider .swiper', {
     loop: true,
     centerMode: true,
     speed: 2500,

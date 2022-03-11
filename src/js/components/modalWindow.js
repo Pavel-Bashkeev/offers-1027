@@ -1,5 +1,5 @@
-export const modalWindow = () => {
-  const modal = document.querySelector('.modal');
+export async function modalWindow() {
+	const modal = document.querySelector('.modal');
 	const modalContent = document.querySelector('.modal-content');
 	const modalCloseBtn = document.querySelector('.modal-close');
 	const form = document.querySelector('form');
@@ -17,16 +17,15 @@ export const modalWindow = () => {
 			const productInfo = cardTarget.querySelector('.product-description');
 			const mainImageCard = cardTarget.querySelector('.card__image--main');
 			const cardProductName = cardTarget.querySelector('.card__title').textContent;
-			// const btnFormCard = cardTarget.querySelector('.form__btn');
 
 			const cardPriceProduct = cardTarget.querySelector('.card__price');
 			const cloneCardPriceProduct = cardPriceProduct.cloneNode(true);
 			cloneCardPriceProduct.classList.remove('card__price');
 			cloneCardPriceProduct.classList.add('modal-content__price');
 
-			
 
-			const cloneProductInfo = productInfo.cloneNode(true);			
+
+			const cloneProductInfo = productInfo.cloneNode(true);
 			const modalProductName = cloneProductInfo.querySelector('.product-description .product-description__title');
 
 			modalProductName ? modalProductName.innerHTML = cardProductName : '';
@@ -34,14 +33,14 @@ export const modalWindow = () => {
 			modal.classList.add('is-open');
 			document.body.classList.add('disable-scroll');
 			document.body.style.paddingRight = widthScrollBar + 'px';
-			
+
 			modalCardImage.src = mainImageCard.src;
-			
+
 			form.classList.add('modal-content__form');
 			form.prepend(cloneCardPriceProduct);
 			formBox.appendChild(form);
-			productInfo ? productContentBox.appendChild(cloneProductInfo) : '' ;
-		})
+			productInfo ? productContentBox.appendChild(cloneProductInfo) : '';
+		});
 	});
 	modalCloseBtn.addEventListener('click', () => {
 		modal.classList.remove('is-open');
@@ -51,5 +50,5 @@ export const modalWindow = () => {
 		productContentBox.innerHTML = '';
 		modalProductPriceBox.innerHTML = '';
 		form.removeChild(form.querySelector('.price'));
-	})
+	});
 }

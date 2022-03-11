@@ -34,7 +34,7 @@ export const animRunLine = () => {
   const timeLineRunLineNew = gsap.timeline({ defaults: { duration: 45,  ease: "none", repeat: -1 } });
   // timeLineRunLine.fromTo('.runline__text',{x:"0"}, {x:"250%", onComplete: ()=> timeLineRunLineNew.play()});
 
-  timeLineRunLineNew.fromTo('.runline__text',{x:"-250%"}, {x:"230%"});
+  timeLineRunLineNew.fromTo('.runline__text',{x:"250%"}, {x:"-230%"});
   } catch (error) {
     console.log('error: ', error);
     
