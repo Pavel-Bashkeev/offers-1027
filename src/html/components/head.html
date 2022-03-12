@@ -4,9 +4,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>@@title</title>
   <meta property="og:title" content="@@ogTitle" />
-	<meta property="og:description" content="@@ogDescription" />
-	<meta property="og:image" content="@@ogImagePath" />
-	<meta property="og:type" content="website" /> 
+  <meta property="og:description" content="@@ogDescription" />
+  <meta property="og:image" content="@@ogImagePath" />
+  <meta property="og:type" content="website" />
   <link rel="shortcut icon" href="@@faviconPath" type="image/png">
 
   <link rel="prefetch" href="./fonts/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin>
@@ -14,9 +14,9 @@
   <link rel="prefetch" href="./fonts/Roboto-Bold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="prefetch" href="./fonts/Sansation-Light.woff2" as="font" type="font/woff2" crossorigin>
 
-  <link rel="preload" as="style" type="text/css" href="./css/swiper.min.css" onload="this.rel='stylesheet'">
+  <link rel="stylesheet" href="./css/swiper.min.css" media="print" onload="this.media='all'; this.onload = null">
 
-  <link rel="preload" as="style" type="text/css" href="./css/main.min.css" onload="this.rel='stylesheet'">
-  <link rel="preload" as="style" type="text/css" href="./css/styleAsync.min.css" onload="this.rel='stylesheet'">
+  <link rel="stylesheet" href="./css/main.min.css" media="print" onload="this.media='all'; this.onload = null">
+  <link rel="stylesheet" href="./css/styleAsync.min.css" media="print" onload="this.media='all'; this.onload = null">
   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
