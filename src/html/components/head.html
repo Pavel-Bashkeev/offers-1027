@@ -14,8 +14,9 @@
   <link rel="prefetch" href="./fonts/Roboto-Bold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="prefetch" href="./fonts/Sansation-Light.woff2" as="font" type="font/woff2" crossorigin>
 
-  <link rel="stylesheet" href="./css/swiper.min.css">
-  <link rel="stylesheet" href="./css/main.min.css" media="none" onload="if(media!='all')media='all'">
-  <link rel="stylesheet" href="./css/styleAsync.min.css" media="none" onload="this.media='all'">
+  <link rel="preload" as="style" type="text/css" href="./css/swiper.min.css" onload="this.rel='stylesheet'">
+
+  <link rel="preload" as="style" type="text/css" href="./css/main.min.css" onload="this.rel='stylesheet'">
+  <link rel="preload" as="style" type="text/css" href="./css/styleAsync.min.css" onload="this.rel='stylesheet'">
   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
