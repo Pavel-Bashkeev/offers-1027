@@ -1,0 +1,37 @@
+%bg-cover{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+%bg-contain{
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+%bg-100{
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+}
+%title{
+  font: 700 40px/47px var(--font);
+	text-align: center;
+	text-transform: uppercase;
+}
+%section-bg{
+  position: relative;
+  z-index: 1;
+  background-image: url('@img/bg.jpg');
+  @extend %bg-cover;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(121, 15, 0, 0.8);
+    z-index: -1;
+  }
+}

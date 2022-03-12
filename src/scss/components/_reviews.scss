@@ -1,6 +1,6 @@
 .reviews {
   &__title {
-    @extend .title;
+    @extend %title;
   }
   &__slider{
     position: relative;

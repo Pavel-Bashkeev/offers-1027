@@ -19,7 +19,7 @@ import { copyFile } from "./gulp/tasks/copy.js";
 import { reset } from "./gulp/tasks/reset.js";
 import { html } from "./gulp/tasks/html.js";
 import { server } from "./gulp/tasks/server.js";
-import { styles, externalLibs } from "./gulp/tasks/styles.js";
+import { styles, externalLibs, asyncStyle } from "./gulp/tasks/styles.js";
 import { scripts, externalScripts } from "./gulp/tasks/scripts.js";
 import { images } from "./gulp/tasks/images.js";
 import { fontsConvert } from "./gulp/tasks/fonts.js";
@@ -32,6 +32,7 @@ const watcher = () => {
   gulp.watch(app.path.watch.pug, html);
   gulp.watch(app.path.watch.scss, styles);
   gulp.watch(app.path.watch.exStyles, externalLibs);
+  gulp.watch(app.path.watch.asyncStyle, asyncStyle);
   gulp.watch(app.path.watch.js, scripts);
   gulp.watch(app.path.watch.exJs, externalScripts);
   gulp.watch(app.path.watch.img, images);
@@ -39,9 +40,12 @@ const watcher = () => {
   gulp.watch(app.path.watch.fonts, fonts);
 }
 //Задачи по шрифтам
-const fonts = gulp.series(reset, fontsConvert)
+const fonts = gulp.series(reset, fontsConvert);
+// Задачи со стилями
+  const stylesTasks = gulp.series(styles, externalLibs, asyncStyle);
+// 
 // Основная задача
-const mainTasks = gulp.series(fonts, gulp.parallel(copyFile, html, styles, externalLibs, scripts, externalScripts, images, spriteIcons));
+const mainTasks = gulp.series(fonts, gulp.parallel(copyFile, html, stylesTasks, scripts, externalScripts, images, spriteIcons));
 // Построение сценариев
 const dev = gulp.series(mainTasks, gulp.parallel(watcher, server))
 const build = gulp.series(reset, mainTasks)

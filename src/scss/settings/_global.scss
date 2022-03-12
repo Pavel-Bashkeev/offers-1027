@@ -57,7 +57,7 @@ body {
 .section-bg{
 	position: relative;
   z-index: 1;
-  background-image: url('@img/bg.jpg');
+  background-image: url('@img/bg.webp');
   @extend %bg-cover;
 
   &::before {

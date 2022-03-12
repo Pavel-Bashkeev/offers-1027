@@ -1,7 +1,7 @@
 .order{
-  @extend .section-bg;
+  @extend %section-bg;
   &__title{
-    @extend .title;
+    @extend %title;
     color: var(--light);
     margin: 0 0 35px;
   }

@@ -1,6 +1,6 @@
 .catalog {
   &__title {
-    @extend .title;
+    @extend %title;
     color: var(--black);
     margin: 0 auto 41px;
   }

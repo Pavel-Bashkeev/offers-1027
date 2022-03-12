@@ -1,7 +1,7 @@
 .about{
-  @extend .section-bg;
+  @extend %section-bg;
   &__title{
-    @extend .title;
+    @extend %title;
     margin:0 auto 31px;
     color: var(--light);
   }
